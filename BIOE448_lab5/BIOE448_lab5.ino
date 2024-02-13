@@ -22,7 +22,7 @@ void setup() {
     while(1);
   }
 
-  BLE.setDeviceName("Harlan+Jimmy_inLove");
+  BLE.setDeviceName("Harlan_Jimmy_and_JJ_too");
   BLE.setAdvertisedService(newService);
   newService.addCharacteristic(readChar);
   newService.addCharacteristic(writeChar);
