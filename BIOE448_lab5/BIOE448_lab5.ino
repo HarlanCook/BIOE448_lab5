@@ -25,7 +25,7 @@ void setup() {
   while(1);
   }
   // Set up bluetooth device
-  BLE.setDeviceName("Your names here");
+  BLE.setDeviceName("Harlan+JimmyXoXo");
   BLE.setAdvertisedService(newService);
   newService.addCharacteristic(readChar);
   newService.addCharacteristic(writeChar);
@@ -56,6 +56,10 @@ void loop() {
   Serial.print(" cm/");
   Serial.print(distanceInch);
   Serial.println(" in");
+
+  // Send over bluetooth
+  readChar.writeValue(distanceCm);
+
   delay(1000);
 
   if (distanceInch < 6){
